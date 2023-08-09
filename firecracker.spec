@@ -14,7 +14,7 @@
 %endif
 
 Name:           firecracker
-Version:        1.4.0
+Version:        1.4.1
 Release:        1%{?dist}
 
 Summary:        Secure and fast microVMs for serverless computing
@@ -34,11 +34,11 @@ Provides:       bundled(crate(micro_http)) = 0.1.0^git4b18a04
 
 # Edit crate dependencies to track what is packaged in Fedora.
 # These patches do not make sense to send upstream given their purpose.
-Patch1:         %{name}-1.4.0-remove-aws-lc-rs.patch
-Patch2:         %{name}-1.4.0-remove-cargo_toml.patch
-Patch3:         %{name}-1.4.0-remove-criterion.patch
-Patch4:         %{name}-1.4.0-remove-device_tree.patch
-Patch5:         %{name}-1.4.0-upgrade-kvm-ioctls.patch
+Patch:          %{name}-1.4.1-remove-aws-lc-rs.patch
+Patch:          %{name}-1.4.0-remove-cargo_toml.patch
+Patch:          %{name}-1.4.1-remove-criterion.patch
+Patch:          %{name}-1.4.1-remove-device_tree.patch
+Patch:          %{name}-1.4.0-upgrade-kvm-ioctls.patch
 
 BuildRequires:  cargo-rpm-macros >= 24
 %if %defined cargo_target
@@ -111,6 +111,9 @@ done
 
 
 %changelog
+* Wed Aug 09 2023 David Michael <fedora.dm0@gmail.com> - 1.4.1-1
+- Update to the 1.4.1 release.
+
 * Wed Jul 19 2023 David Michael <fedora.dm0@gmail.com> - 1.4.0-1
 - Update to the 1.4.0 release.
 
