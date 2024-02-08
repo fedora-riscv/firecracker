@@ -9,7 +9,7 @@
 
 Name:           firecracker
 Version:        1.6.0
-Release:        6%{?dist}
+Release:        6.rv64%{?dist}
 
 Summary:        Secure and fast microVMs for serverless computing
 License:        Apache-2.0 AND (Apache-2.0 OR BSD-3-Clause) AND (Apache-2.0 OR BSL-1.0) AND (Apache-2.0 OR MIT) AND (Apache-2.0 WITH LLVM-exception OR Apache-2.0 OR MIT) AND BSD-3-Clause AND MIT AND (MIT OR Unlicense) AND Unicode-DFS-2016
@@ -37,7 +37,7 @@ BuildRequires:  rust-std-static-%{cargo_target}
 %endif
 
 # Currently only these architectures are supported.  See the README.
-ExclusiveArch:  aarch64 x86_64
+ExclusiveArch:  aarch64 x86_64 riscv64
 
 %description
 Firecracker is an open source virtualization technology that is purpose-built
